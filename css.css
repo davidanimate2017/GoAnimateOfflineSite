@@ -1,0 +1,128 @@
+@import "lesshat";
+
+@import url('https://getbootstrap.com/dist/css/bootstrap.css');
+
+
+
+@border-radius-base:  3px;
+@panel-border-radius:         @border-radius-base;
+
+// Need to compensatve for padding in panel-heading
+// variable - @panel-heading-padding
+@panel-heading-padding:10px 15px;
+@panel-heading-padding-negate: -10px -15px;
+
+
+.panel {
+  .panel-heading {
+    .nav-tabs {
+      margin:@panel-heading-padding-negate;
+      border-bottom-width:0;
+
+      > li {
+        > a {
+          // re-apply the original padding 
+          padding:@panel-heading-padding;
+          margin-bottom:1px;
+          margin-right:0;
+          border-radius:0;
+
+          border:solid 0 transparent;
+          &:hover {
+            border-color: transparent;
+          }
+        }
+
+
+        &:first-child > a{
+          border-top-left-radius:@panel-border-radius;
+        }
+        &:last-child > a {
+          border-top-right-radius:@panel-border-radius;
+        }
+
+        &.active > a {
+          &, 
+          &:hover,
+          &:focused {
+            border:solid 0 transparent;							
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+body {
+  padding : 10px ;
+  
+}
+
+#exTab1 .tab-content {
+  color : white;
+  background-color: #428bca;
+  padding : 5px 15px;
+}
+
+#exTab2 h3 {
+  color : white;
+  background-color: #428bca;
+  padding : 5px 15px;
+}
+
+/* remove border radius for the tab */
+
+#exTab1 .nav-pills > li > a {
+  border-radius: 0;
+}
+
+/* change border radius for the tab , apply corners on top*/
+
+#exTab3 .nav-pills > li > a {
+  border-radius: 4px 4px 0 0 ;
+}
+
+#exTab3 .tab-content {
+  color : white;
+  background-color: #428bca;
+  padding : 5px 15px;
+}
+
+// variable - @panel-heading-padding.  
+@panel-heading-padding-negate: -10px -15px;
+
+.panel {
+    .panel-heading {
+        .nav-tabs {
+            margin:@panel-heading-padding-negate;
+            border-bottom-width:0;
+
+            > li {
+                > a {
+                    // re-apply the original padding 
+                    padding:@panel-heading-padding;
+                    margin-bottom:1px;
+
+                    border:solid 0 transparent;
+                    &:hover {
+                        border-color: transparent;
+                    }
+
+
+                }
+
+                &.active > a {
+                    &, 
+                    &:hover,
+                    &:focused {
+                        border:solid 0 transparent;                         
+                    }
+                }
+            }
+        }
+    }
+}
+
+
